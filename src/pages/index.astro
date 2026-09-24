@@ -1,0 +1,250 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const projects = [
+  {
+    name: "CGPA Calculator",
+    blurb: "Built for UNIOSUN's 5.0 grading scale. Students were doing this math by hand every semester, now they don't.",
+    tags: ["JavaScript", "HTML", "CSS", "localStorage"],
+    href: "#",
+  },
+  {
+    name: "joebot",
+    blurb: "A terminal AI assistant with real file access and tool calling, not a chat wrapper. Started as a Python script, rebuilt into a full JavaScript CLI and server.",
+    tags: ["Node.js", "JavaScript", "CLI", "APIs"],
+    href: "#",
+  },
+];
+---
+
+<BaseLayout
+  title="Joe — Developer"
+  description="Adebiyi Joseph Ayomide, a self-taught developer in Nigeria, still learning and shipping real projects."
+>
+  <canvas id="space-bg" class="fixed inset-0 -z-10 h-full w-full"></canvas>
+
+  <header class="fixed top-0 left-0 right-0 z-10 border-b border-border bg-bg/90 backdrop-blur-sm" style="padding-top: env(safe-area-inset-top, 0px);">
+    <nav class="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
+      <a href="#top" class="font-display text-lg font-semibold">Joe</a>
+      <div class="flex gap-6 text-sm text-text-muted">
+        <a href="#work" class="hover:text-text">Work</a>
+        <a href="#about" class="hover:text-text">About</a>
+        <a href="#contact" class="hover:text-text">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="mx-auto max-w-3xl px-6 pt-32 pb-24">
+    <section class="flex flex-col-reverse items-start gap-10 sm:flex-row sm:items-center">
+      <div class="flex-1">
+        <p class="hero-name mb-3 text-text-muted">Adebiyi Joseph Ayomide</p>
+        <h1 class="hero-heading font-display text-4xl font-semibold leading-tight sm:text-5xl">
+          I'm a self taught developer. Still learning, still shipping.
+        </h1>
+        <p class="hero-sub mt-5 max-w-md text-text-muted">
+          Based in Nigeria. I build real tools, not tutorials I never finished.
+          No computer science degree, just projects that work.
+        </p>
+        <div class="hero-cta mt-8 flex flex-wrap gap-4">
+          <a
+            href="#work"
+            class="rounded-md bg-accent px-5 py-3 font-medium text-bg transition-colors hover:bg-accent-deep"
+          >
+            See what I've built
+          </a>
+          <a
+            href="#contact"
+            class="rounded-md border border-border px-5 py-3 font-medium text-text transition-colors hover:border-accent"
+          >
+            Get in touch
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo relative flex-shrink-0">
+        <div
+          class="absolute -inset-4 rounded-full opacity-30 blur-2xl"
+          style="background: radial-gradient(circle, var(--color-accent), transparent 70%);"
+        ></div>
+        <img
+          src="/images/joe-headshot.jpg"
+          alt="Portrait of Adebiyi Joseph Ayomide"
+          width="192"
+          height="192"
+          class="relative h-40 w-40 rounded-md object-cover grayscale sm:h-48 sm:w-48"
+        />
+      </div>
+    </section>
+
+    <section class="mt-24 grid grid-cols-1 gap-8 border-t border-border pt-12 sm:grid-cols-2">
+      <div>
+        <h2 class="font-display text-xl font-semibold">A bit more about me</h2>
+        <p class="mt-3 text-text-muted">
+          I take coding seriously. Outside of that, graphics design and gaming
+          keep me sane.
+        </p>
+      </div>
+      <dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm">
+        <dt class="text-text-muted">Name</dt>
+        <dd>Adebiyi Joseph Ayomide</dd>
+        <dt class="text-text-muted">Based in</dt>
+        <dd>Nigeria</dd>
+        <dt class="text-text-muted">Interests</dt>
+        <dd>Coding, graphics design, gaming</dd>
+        <dt class="text-text-muted">Works well on</dt>
+        <dd>Mobile and desktop</dd>
+      </dl>
+    </section>
+
+    <section id="work" class="mt-24 scroll-mt-24 border-t border-border pt-12">
+      <h2 class="font-display text-xl font-semibold">What I've built</h2>
+      <div class="mt-8 flex flex-col gap-6">
+        {projects.map((project) => (
+          <a
+            href={project.href}
+            class="project-card group block rounded-md border border-border bg-surface p-6"
+          >
+            <h3 class="font-display text-lg font-semibold group-hover:text-accent">
+              {project.name}
+            </h3>
+            <p class="mt-2 text-text-muted">{project.blurb}</p>
+            <ul class="mt-4 flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <li class="tag-chip rounded border border-border px-2 py-1 text-xs text-text-muted">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section id="about" class="mt-24 scroll-mt-24 border-t border-border pt-12">
+      <h2 class="font-display text-xl font-semibold">About</h2>
+      <p class="mt-4 max-w-xl text-text-muted">
+        I'm a Library and Information Science student and a self taught
+        developer. No formal computer science background, no bootcamp
+        certificate. What I have is projects that actually run, and a habit
+        of finishing what I start.
+      </p>
+    </section>
+
+    <section id="contact" class="mt-24 scroll-mt-24 border-t border-border pt-12">
+      <h2 class="font-display text-xl font-semibold">Get in touch</h2>
+      <p class="mt-4 text-text-muted">
+        Reach out directly, no forms in the way.
+      </p>
+      <div class="mt-6 flex flex-col gap-3 text-sm">
+        <a href="mailto:adebiyijosephayomide@gmail.com" class="hover:text-accent">
+          adebiyijosephayomide@gmail.com
+        </a>
+        <a href="https://wa.me/2347039171898" class="hover:text-accent">
+          WhatsApp: +234 703 917 1898
+        </a>
+        <a href="https://github.com/JoeBuildsThings" class="hover:text-accent">
+          github.com/JoeBuildsThings
+        </a>
+        <a href="https://www.facebook.com/adebiyi.joseph.ayomide" class="hover:text-accent">
+          Facebook
+        </a>
+        <a href="https://www.instagram.com/adebiyijosephayomide" class="hover:text-accent">
+          Instagram
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-border py-8 text-center text-xs text-text-muted">
+    Adebiyi Joseph Ayomide, {new Date().getFullYear()}.
+  </footer>
+</BaseLayout>
+
+<script>
+  const canvas = document.getElementById("space-bg") as HTMLCanvasElement | null;
+  if (canvas) {
+    const ctx = canvas.getContext("2d");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let width = 0;
+    let height = 0;
+    let dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas!.width = width * dpr;
+      canvas!.height = height * dpr;
+      canvas!.style.width = `${width}px`;
+      canvas!.style.height = `${height}px`;
+      ctx?.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    resize();
+    window.addEventListener("resize", resize);
+
+    type Star = { x: number; y: number; r: number; twinkleSpeed: number; twinklePhase: number };
+    type Particle = { x: number; y: number; r: number; speed: number; drift: number; opacity: number };
+
+    const starCount = Math.floor((width * height) / 9000);
+    const stars: Star[] = Array.from({ length: Math.min(starCount, 160) }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: Math.random() * 1.2 + 0.3,
+      twinkleSpeed: Math.random() * 0.015 + 0.005,
+      twinklePhase: Math.random() * Math.PI * 2,
+    }));
+
+    const particleCount = Math.min(Math.floor(width / 22), 45);
+    const particles: Particle[] = Array.from({ length: particleCount }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: Math.random() * 1.8 + 0.6,
+      speed: Math.random() * 0.35 + 0.15,
+      drift: Math.random() * 0.4 - 0.2,
+      opacity: Math.random() * 0.4 + 0.15,
+    }));
+
+    let frame = 0;
+
+    function draw() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, width, height);
+
+      for (const star of stars) {
+        const twinkle = Math.sin(frame * star.twinkleSpeed + star.twinklePhase) * 0.4 + 0.6;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(242, 242, 240, ${twinkle * 0.7})`;
+        ctx.fill();
+      }
+
+      for (const p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(245, 166, 35, ${p.opacity})`;
+        ctx.fill();
+
+        p.y += p.speed;
+        p.x += p.drift;
+
+        if (p.y > height + 10) {
+          p.y = -10;
+          p.x = Math.random() * width;
+        }
+        if (p.x > width + 10) p.x = -10;
+        if (p.x < -10) p.x = width + 10;
+      }
+
+      frame++;
+      if (!prefersReducedMotion) {
+        requestAnimationFrame(draw);
+      }
+    }
+
+    if (prefersReducedMotion) {
+      draw();
+    } else {
+      requestAnimationFrame(draw);
+    }
+  }
+</script>
