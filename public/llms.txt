@@ -1,0 +1,14 @@
+# Adebiyi Joseph Ayomide
+
+> Self taught backend developer based in Nigeria. Builds Node.js servers, API integrations and secure data layers. Open to remote junior backend roles.
+
+## Projects
+
+* [joebot](https://github.com/JoeBuildsThings/joebot): Node.js AI assistant server and CLI with tool calling, multi provider routing and a sandboxed filesystem.
+* [Vibeo](https://github.com/JoeBuildsThings/Vibeo): social and messaging app in development, backend designed on Postgres with row level security.
+* [CGPA Calculator](https://github.com/JoeBuildsThings/cgpa-calculator): web app for UNIOSUN's 5.0 grading scale.
+
+## Links
+
+* [GitHub](https://github.com/JoeBuildsThings)
+* [Portfolio](https://joebuildsthings.netlify.app)
